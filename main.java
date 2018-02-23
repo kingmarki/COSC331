@@ -5,18 +5,22 @@ public class main {
 	public static void main(String[] args) 
 	{
 		dungeon d = new dungeon();
-		Hero h = new Hero();
-		Demon devil = new Demon();
+		
 		d.start();
-		d.insertIntoGrid(h, 0);
-		d.insertIntoGrid(devil, 7);
-		
-		
+		d.insertIntoGrid(new Hero(0), 0);
+		d.insertIntoGrid(new Demon(6), 6);
 		
 		d.print();
-		System.out.println("\nWhat do you wana do?");
 		Scanner in = new Scanner(System.in);
-		String input= in.nextLine();
+		String input;
+		
+		while(!d.gameOver())
+		{
+			System.out.println("\nWhat do you wana do?");
+			d.move(in.nextLine());
+			d.print();
+		}
+		
 
 	}
 
