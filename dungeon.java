@@ -1,8 +1,9 @@
 public class dungeon 
 {
 //grid array
-	public Object grid [] = new Object[8];
+	public Actor grid [] = new Actor[8];
 	public boolean gameState = false;
+	public int heroLocation, deamonLocation ;
 	
 	
 	public boolean canMoveLeft(int location) 
@@ -18,7 +19,9 @@ public class dungeon
 	
 	public boolean canMoveRight(int location) 
 	{
-		if (location+1>grid.length)
+		if (location>grid.length)
+			return false;
+		else if (!grid[location+1].type.equals("blank"))
 			return false;
 		else
 			return true;
@@ -32,18 +35,76 @@ public class dungeon
 	public void start() 
 	{
 		for(int i=0;i<grid.length;i++)
-			grid[i]='0';
+			grid[i]=new Actor();
 	}
 	
 	public void print() 
 	{
-		for (int i=0;i<grid.length;i++)
-			System.out.print(grid[i].toString()+" ");
+		if (!gameState)
+			for (int i=0;i<grid.length;i++)
+				System.out.print(grid[i].print()+" ");
+			
 	}
 	
-	public void insertIntoGrid(Object o, int location) 
+	public void insertIntoGrid(Actor o, int location) 
 	{
 		grid[location]= o;
+		if(o.getType().equals("Hero"))
+				heroLocation = location;
+		else if(o.getType().equals("Deamon"))
+				deamonLocation = location;
+	}
+	
+	public void kill()
+	{
+		if (grid[heroLocation-1].type.equals("Deamon")||
+				grid[heroLocation+1].type.equals("Deamon"))
+			grid[deamonLocation] = new Actor();
+		else
+			System.out.println("Invalid");
+	}
+	
+	private void check()
+	{
+		if (heroLocation == grid.length-1)
+		{
+			gameState = true;
+			System.out.println("You Win!");
+		}
+			
+	}
+
+	public void move(String input) 
+	{
+		if (input.equals("left"))
+			{
+				if (canMoveLeft(heroLocation))
+				{
+					grid[heroLocation-1] = grid[heroLocation];
+					grid[heroLocation]=new Actor();
+					heroLocation--;
+					check();
+				}
+				else
+					System.out.println("INVALID MOVE");
+			}
+		else if (input.equals("right"))
+		{
+			if(canMoveRight(heroLocation))
+				{
+					grid[heroLocation+1] = grid[heroLocation];
+					grid[heroLocation]=new Actor();
+					heroLocation++;
+					check();
+				}
+			else
+				System.out.println("INVALID MOVE");
+		}
+		else if (input.equals("kill"))
+		{
+			kill();
+		}
+		
 	}
 
 }
