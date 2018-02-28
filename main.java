@@ -4,6 +4,8 @@ public class main {
 
 	public static void main(String[] args) 
 	{
+		
+		system.out.println("Welcome" + name + "! To the game prepair for battle!!!")
 		dungeon d = new dungeon();
 		
 		d.start();
