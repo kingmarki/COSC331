@@ -69,7 +69,7 @@ public class dungeon
 		if (heroLocation == grid.length-1)
 		{
 			gameState = true;
-			System.out.println("You Win!");
+			System.out.println("Congradulations "+name+" you have defeated the evil monster!");
 		}
 			
 	}
@@ -86,7 +86,7 @@ public class dungeon
 					check();
 				}
 				else
-					System.out.println("INVALID MOVE");
+					System.out.println("INVALID MOVE "+name+" please type in a different move to continue your quest to slay the evil monster!!");
 			}
 		else if (input.equals("right"))
 		{
