@@ -18,7 +18,9 @@ public class main {
 		
 		while(!d.gameOver())
 		{
-			System.out.println("\nWhat do you wana do?");
+			System.out.println("\nIt is time for you to make a move "+name+".");
+			System.out.println("\ntype in right if you wish to challenge the evil monster!!!");
+			System.out.println("\ntype in left if you wish to wait to wait to challenge the evil monster"!!!)
 			d.move(in.nextLine());
 			d.print();
 		}
