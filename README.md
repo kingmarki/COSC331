@@ -10,7 +10,7 @@ The goal to this Dungeon Crawler game is slay the evil monster and reach the end
 1. Download git-bash from the following web page https://git-scm.com/downloads, to get the latest version of Git type in the code git clone https://github.com/git/git.
 2. Once downloaded and are able to pull it up, you will need to navigate to the desktop on the Git-bash by using the command cd ~/Desktop/.
 3. Once you are on the Desktop you are gonna wanna type in git clone
-#### How to Play
+#### Directopms
 ---
 1. You enter in a name for your character.
 2. After entering in a character name you will be asked to enter in a way to move, you have two options "right" or "left", make sure to enter in right when starting the game, If you enter in left right at the start you will be told that you can not go that way, cause it wouldnt be in the dungeon.
@@ -23,9 +23,12 @@ Right - Moves the hero to the right
 
 kill - kills the monster. Must be in next space
 
-#### How to start in Server
+#### How to play
 ---
 Use the following Commands:
+
 Start - Starts new game
+
+Use "left", "right", and "kill" to control the hero
 ### License & copyright
 © Alec Smoot, Mark Lemus - Licensed under MIT
