@@ -4,8 +4,12 @@ public class dungeon
 	public Actor grid [] = new Actor[8];
 	public boolean gameState = false;
 	public int heroLocation, deamonLocation ;
+	public String name;
 	
-	
+	public void setName(String n)
+	{
+		name=n;
+	}
 	public boolean canMoveLeft(int location) 
 	{
 		if (location==0)
@@ -38,11 +42,13 @@ public class dungeon
 			grid[i]=new Actor();
 	}
 	
-	public void print() 
+	public String print() 
 	{
+		String s = "";
 		if (!gameState)
 			for (int i=0;i<grid.length;i++)
-				System.out.print(grid[i].print()+" ");
+				s+=(grid[i].print()+" ");
+		return s;
 			
 	}
 	
@@ -74,7 +80,7 @@ public class dungeon
 			
 	}
 
-	public void move(String input) 
+	public boolean move(String input) 
 	{
 		if (input.equals("left"))
 			{
@@ -84,9 +90,10 @@ public class dungeon
 					grid[heroLocation]=new Actor();
 					heroLocation--;
 					check();
+					return true;
 				}
 				else
-					System.out.println("INVALID MOVE "+name+" please type in a different move to continue your quest to slay the evil monster!!");
+					return false;
 			}
 		else if (input.equals("right"))
 		{
@@ -96,14 +103,17 @@ public class dungeon
 					grid[heroLocation]=new Actor();
 					heroLocation++;
 					check();
+					return true;
 				}
 			else
-				System.out.println("INVALID MOVE");
+				return false;
 		}
 		else if (input.equals("kill"))
 		{
 			kill();
+			return true;
 		}
+		return false;
 		
 	}
 
