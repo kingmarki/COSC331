@@ -18,8 +18,11 @@ The goal to this Dungeon Crawler game is slay the evil monster and reach the end
 #### Controls
 ---
 Left- Moves the hero to the left
+
 Right - Moves the hero to the right
+
 kill - kills the monster. Must be in next space
+
 #### How to start in Server
 ---
 Use the following Commands:
