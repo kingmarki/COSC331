@@ -15,5 +15,12 @@ The goal to this Dungeon Crawler game is slay the evil monster and reach the end
 1. You enter in a name for your character.
 2. After entering in a character name you will be asked to enter in a way to move, you have two options "right" or "left", make sure to enter in right when starting the game, If you enter in left right at the start you will be told that you can not go that way, cause it wouldnt be in the dungeon.
 3. Once you are walking thought the dungeon you will come to a evil monster that you must slay, if you do not slay the monster you will lose, if you happen to slay the monster you can move on through out the dungeon and become VICTORIOUS!!!!!!
+#### Controls
+Left- Moves the hero to the left
+Right - Moves the hero to the right
+kill - kills the monster. Must be in next space
+#### How to start in Server
+Use the following Commands:
+Start - Starts new game
 ### License & copyright
-© Alec Smoot, Mark Lemus
+© Alec Smoot, Mark Lemus - Licensed under MIT
