@@ -20,7 +20,7 @@ public class main {
 		{
 			System.out.println("\nIt is time for you to make a move "+name+".");
 			System.out.println("\ntype in right if you wish to challenge the evil monster!!!");
-			System.out.println("\ntype in left if you wish to wait to wait to challenge the evil monster"!!!)
+			System.out.println("\ntype in left if you wish to wait to challenge the evil monster"!!!)
 			d.move(in.nextLine());
 			d.print();
 		}
