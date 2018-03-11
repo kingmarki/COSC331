@@ -8,9 +8,10 @@ The goal to this Dungeon Crawler game is slay the evil monster and reach the end
 #### How to Upload
 ---
 1. Download git-bash from the following web page https://git-scm.com/downloads, to get the latest version of Git type in the code git clone https://github.com/git/git.
-2. Once downloaded and are able to pull it up, you will need to navigate to the desktop on the Git-bash by using the command cd ~/Desktop/.
+2. Once downloaded and are able to pull it up, you will need to navigate to the desktop on the Git-bash by using the command cd ~/Desktop/. Which now should look like (bash: /c/Users/alecs/Desktop/: Is a directory) in the smd.
+
 3. Once you are on the Desktop you are gonna wanna type in git clone
-#### Directopms
+#### Directions
 ---
 1. You enter in a name for your character.
 2. After entering in a character name you will be asked to enter in a way to move, you have two options "right" or "left", make sure to enter in right when starting the game, If you enter in left right at the start you will be told that you can not go that way, cause it wouldnt be in the dungeon.
