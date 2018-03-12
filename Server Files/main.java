@@ -10,6 +10,11 @@ public class main {
  }
 
  public static void main(String[] args) throws Exception {
+  
+  //print out servers IP and port
+  System.out.println("My IP is: "+InetAddress.getLocalHost().getHostAddress());
+  System.out.println("Use port 9876");
+  
   //Create recieving port for server
   DatagramSocket serverSocket = new DatagramSocket(9876);
   byte[] receiveData = new byte[1024];
