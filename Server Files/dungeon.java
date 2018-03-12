@@ -6,10 +6,13 @@ public class dungeon
 	public int heroLocation, deamonLocation ;
 	public String name;
 	
+	//Sets the name of the player
 	public void setName(String n)
 	{
 		name=n;
 	}
+	
+	//Tells you if player can move left
 	public boolean canMoveLeft(int location) 
 	{
 		if (location==0)
@@ -21,6 +24,7 @@ public class dungeon
 //		else return true;
 	}
 	
+	//Tells you if Player can move right
 	public boolean canMoveRight(int location) 
 	{
 		if (location>grid.length)
@@ -31,6 +35,7 @@ public class dungeon
 			return true;
 	}
 	
+	//Tells you if the game is complete
 	public boolean gameOver() 
 	{
 		return gameState;
@@ -42,6 +47,7 @@ public class dungeon
 			grid[i]=new Actor();
 	}
 	
+	//Prints out the entire map
 	public String print() 
 	{
 		String s = "";
@@ -52,6 +58,8 @@ public class dungeon
 			
 	}
 	
+	
+	//Inserts player into grid
 	public void insertIntoGrid(Actor o, int location) 
 	{
 		grid[location]= o;
@@ -61,6 +69,7 @@ public class dungeon
 				deamonLocation = location;
 	}
 	
+	//kills the foe if nearby
 	public void kill()
 	{
 		if (grid[heroLocation-1].type.equals("Deamon")||
@@ -70,6 +79,7 @@ public class dungeon
 			System.out.println("Invalid");
 	}
 	
+	//Checks if game is complete
 	private void check()
 	{
 		if (heroLocation == grid.length-1)
@@ -79,11 +89,13 @@ public class dungeon
 		}
 			
 	}
-
+	
+	//Method to move Hero (Type in left, right, or kill)
 	public boolean move(String input) 
 	{
 		if (input.equals("left"))
 			{
+			//move left
 				if (canMoveLeft(heroLocation))
 				{
 					grid[heroLocation-1] = grid[heroLocation];
@@ -97,6 +109,7 @@ public class dungeon
 			}
 		else if (input.equals("right"))
 		{
+			//Move right
 			if(canMoveRight(heroLocation))
 				{
 					grid[heroLocation+1] = grid[heroLocation];
@@ -108,6 +121,7 @@ public class dungeon
 			else
 				return false;
 		}
+		//Kill command
 		else if (input.equals("kill"))
 		{
 			kill();
