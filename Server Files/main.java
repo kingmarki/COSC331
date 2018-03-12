@@ -12,15 +12,19 @@ public class main {
 
 	public static void main(String[] args) throws Exception
 	{
+		//Create recieving port for server
 		DatagramSocket serverSocket = new DatagramSocket(9876);
 		byte[] receiveData = new byte[1024];
-    	byte[] sendData = new byte[1024]; 
+    		byte[] sendData = new byte[1024]; 
 		DatagramPacket startreceivePacket;
 //		byte[] startreceiveData = new byte[1024];
 //    	byte[] startsendData = new byte[1024];  
+		
+		//recieve a packet
     	startreceivePacket = new DatagramPacket(receiveData, receiveData.length);
     	serverSocket.receive(startreceivePacket);
         String start = new String( startreceivePacket.getData()).trim();
+		//type start to start game
         if (start.equals("start"))
         {
 		dungeon d = new dungeon();
@@ -35,6 +39,7 @@ public class main {
 //		String name = in2.nextLine();
 //		System.out.println("Welcome" + name + "! To the game prepair for battle!!!");
 //		d.setName(name);
+		//Send map to Client
 		String firstLine = d.print();
         sendData = firstLine.getBytes();
         DatagramPacket first =
@@ -46,6 +51,7 @@ public class main {
 //		System.out.println("\ntype in right if you wish to challenge the evil monster!!!");
 //		System.out.println("\ntype in left if you wish to wait to wait to challenge the evil monster!!!");
 		
+		//Recieve packets until game is over
 		DatagramPacket receivePacket;
         while(!d.gameOver())
            {
@@ -55,10 +61,12 @@ public class main {
             	serverSocket.receive(receivePacket);
                 String gameInput = new String( receivePacket.getData()).trim();
                 System.out.println("RECEIVED: " + gameInput);
+                //Recieve packet then print it out
                 
-                
+		//if player can move then perform the following
                 if (d.move(gameInput))
                 {
+			//check the game state
                 	if (d.gameState)
                     {
                     	//return for game
