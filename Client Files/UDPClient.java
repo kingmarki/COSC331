@@ -9,7 +9,13 @@ class UDPClient
 	   BufferedReader inFromUser =
          new BufferedReader(new InputStreamReader(System.in));
       DatagramSocket clientSocket = new DatagramSocket();
-      InetAddress IPAddress = InetAddress.getByName("localhost");
+      String ip;
+      int port;
+      System.out.println("what IP do you want to connect to?");
+      ip = inFromUser.readLine();
+      InetAddress IPAddress = InetAddress.getByName(ip);
+      System.out.println("what port? (9876)");
+      port = Integer.parseInt(inFromUser.readLine());
       byte[] sendData = new byte[1024];
       byte[] receiveData = new byte[1024];
       String sentence = inFromUser.readLine();
@@ -17,7 +23,7 @@ class UDPClient
       while (!gameOver)
       {
     	  sendData = sentence.getBytes();
-          DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, 9876);
+          DatagramPacket sendPacket = new DatagramPacket(sendData, sendData.length, IPAddress, port);
           clientSocket.send(sendPacket);
           DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
           clientSocket.receive(receivePacket);
