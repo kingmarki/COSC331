@@ -10,11 +10,13 @@ The goal to this Dungeon Crawler game is slay the evil monster and reach the end
 1. Download git-bash from the following web page https://git-scm.com/downloads, to get the latest version of Git type in the code git clone https://github.com/git/git.
 2. Once downloaded and are able to pull it up, you will need to navigate to the desktop on the Git-bash by using the command cd ~/Desktop/. Which now should look like (bash: /c/Users/alecs/Desktop/: Is a directory) in the smd.
 
-3. Once you are on the Desktop you are gonna wanna type in git clone
+3. Once you are on the Desktop type in git clone
+
+4. Once you have retrieved the .jar files start up two command prompt windows and type in 'java -jar DCserver.jar' and 'java -jar DCclient.jar'
 #### Directions
 ---
 1. You enter in a name for your character.
-2. After entering in a character name you will be asked to enter in a way to move, you have two options "right" or "left", make sure to enter in right when starting the game, If you enter in left right at the start you will be told that you can not go that way, cause it wouldnt be in the dungeon.
+2. After entering in a character name you will be asked to enter in a way to move, you have three options "right", "left", or "kill" make sure to enter in right when starting the game, If you enter in left right at the start you will be told that you can not go that way, cause it wouldnt be in the dungeon.
 3. Once you are walking thought the dungeon you will come to a evil monster that you must slay, if you do not slay the monster you will lose, if you happen to slay the monster you can move on through out the dungeon and become VICTORIOUS!!!!!!
 #### Controls
 ---
