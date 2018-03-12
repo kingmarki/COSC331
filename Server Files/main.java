@@ -69,7 +69,7 @@ public class main {
      //check the game state
      if (d.gameState) {
       //return for game
-      String gameC = "Congradulations null you have defeated the evil monster!, you win!";
+      String gameC = "Congradulations you have defeated the evil monster!, you win!";
       sendData = gameC.getBytes();
       DatagramPacket endGame =
        new DatagramPacket(sendData, sendData.length, IPAddress, port);
