@@ -33,5 +33,5 @@ Use the following Commands:
 Start - Starts new game
 
 Use "left", "right", and "kill" to control the hero
-### License & copyright
-© Alec Smoot, Mark Lemus - Licensed under MIT
+### License
+Alec Smoot, Mark Lemus - This project is licensed under the MIT License - see the LICENSE.md file for details
